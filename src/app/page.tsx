@@ -9,7 +9,6 @@ export default function HomePage() {
     <div className="min-h-screen selection:bg-blue-500/30">
       <main>
         <HeroBanner />
-        <CategoryShowcase />
         <FeaturedProducts />
         <TechHighlights />
       </main>

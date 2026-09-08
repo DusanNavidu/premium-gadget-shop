@@ -28,9 +28,9 @@
     --clay-shadow-inner: hsla(var(--solid-black), 0.03);
 
     /* Hero surface — intentionally fixed across both themes */
-    --hero-surface: 222 47% 9%;
+    --hero-surface: 221 45% 13%;
     --hero-surface-foreground: 210 40% 98%;
-    --hero-surface-muted: 215 20% 70%;
+    --hero-surface-muted: 215 25% 78%;
   }
 
   .dark {
@@ -54,6 +54,11 @@
     --clay-shadow-outer: hsla(var(--solid-black), 0.6);
     --clay-highlight: hsla(var(--solid-white), 0.06);
     --clay-shadow-inner: hsla(var(--solid-black), 0.4);
+
+    /* Hero surface — intentionally fixed across both themes */
+    --hero-surface: 217 35% 18%;
+    --hero-surface-foreground: 210 40% 98%;
+    --hero-surface-muted: 215 20% 75%;
   }
 }
 

@@ -18,7 +18,7 @@ export const heroProducts: HeroProduct[] = [
     description:
       "Next-gen chipset, pro-grade camera system, and all-day battery — engineered for the way you actually use your phone.",
     price: 999,
-    image: "/public/smartphone.png",
+    image: "/smartphone.png",
     badge: "New Arrival",
   },
   {
@@ -29,7 +29,7 @@ export const heroProducts: HeroProduct[] = [
     description:
       "A featherlight chassis hiding desktop-class power. Render, code, and create without ever waiting on your machine.",
     price: 1499,
-    image: "/public/laptop.png",
+    image: "/laptop.png",
     badge: "Best Seller",
   },
   {
@@ -40,7 +40,7 @@ export const heroProducts: HeroProduct[] = [
     description:
       "Studio-tuned drivers and adaptive noise cancellation deliver every detail, exactly the way the artist intended.",
     price: 500,
-    image: "/public/headset.png",
+    image: "/headset.png",
     badge: "Trending",
   },
   {
@@ -51,7 +51,7 @@ export const heroProducts: HeroProduct[] = [
     description:
       "Health metrics, notifications, and battery that outlasts your day — a companion built around your routine.",
     price: 349,
-    image: "/public/smartwatch.png",
+    image: "/smartwatch.png",
     badge: "Limited Stock",
   },
   {
@@ -62,7 +62,7 @@ export const heroProducts: HeroProduct[] = [
     description:
       "A canvas-sized display and pro-grade stylus support turn every idea into work you can ship the same day.",
     price: 799,
-    image: "/public/tablet.png",
+    image: "/tablet.png",
     badge: "Editor's Pick",
   },
 ];
