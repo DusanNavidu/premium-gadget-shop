@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Base Colors - Pure clean white */
+    --background: 0 0% 100%; 
+    --foreground: 222 47% 11%;
+    
+    /* Theme Colors (No hardcoded hex/rgba in components) */
+    --primary: 221.2 83.2% 53.3%;      /* Blue */
+    --primary-foreground: 210 40% 98%; /* White */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%; /* Gray */
+    --accent: 199 89% 48%;             /* Cyan/Light Blue */
+    --destructive: 0 84.2% 60.2%;      /* Red */
+    --warning: 38 92% 50%;             /* Yellow */
+    --success: 142 71% 45%;            /* Green */
+    
+    /* Solid Colors for Shadow Math */
+    --solid-white: 0 0% 100%;
+    --solid-black: 0 0% 0%;
+
+    /* Clay + Glass Light */
+    --clay-bg: hsla(var(--solid-white), 0.6);
+    --clay-border: hsla(222, 47%, 11%, 0.08);
+    --clay-shadow-outer: hsla(222, 47%, 11%, 0.06);
+    --clay-highlight: hsla(var(--solid-white), 1);
+    --clay-shadow-inner: hsla(var(--solid-black), 0.03);
+
+    /* Hero surface — intentionally fixed across both themes */
+    --hero-surface: 222 47% 9%;
+    --hero-surface-foreground: 210 40% 98%;
+    --hero-surface-muted: 215 20% 70%;
+  }
+
+  .dark {
+    /* Base Colors - True/near-black for OLED feel */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    
+    /* Theme Colors */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 199 89% 48%;
+    --destructive: 0 62.8% 30.6%;
+    --warning: 48 96% 53%;
+    --success: 142 71% 45%;
+
+    /* Clay + Glass Dark */
+    --clay-bg: hsla(0, 0%, 8%, 0.6);
+    --clay-border: hsla(var(--solid-white), 0.08);
+    --clay-shadow-outer: hsla(var(--solid-black), 0.6);
+    --clay-highlight: hsla(var(--solid-white), 0.06);
+    --clay-shadow-inner: hsla(var(--solid-black), 0.4);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply antialiased text-[14px] md:text-[16px]; 
+  }
+}
+
+@layer utilities {
+  .clay-card {
+    background-color: var(--clay-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--clay-border);
+    border-radius: 1.25rem;
+    box-shadow: 
+      10px 10px 24px var(--clay-shadow-outer),
+      inset 2px 2px 12px var(--clay-highlight),
+      inset -2px -2px 12px var(--clay-shadow-inner);
+    transition: all 0.3s ease;
+  }
+
+  .clay-btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 1rem;
+    box-shadow: 
+      6px 6px 16px hsla(var(--primary), 0.4),
+      inset 2px 2px 8px hsla(var(--solid-white), 0.3),
+      inset -2px -2px 8px hsla(var(--solid-black), 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .clay-btn-primary:active {
+    box-shadow: 
+      inset 4px 4px 10px hsla(var(--solid-black), 0.3),
+      inset -4px -4px 10px hsla(var(--solid-white), 0.2);
+    transform: scale(0.96);
+  }
+
+  .clay-input {
+    background-color: var(--clay-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    box-shadow: 
+      inset 4px 4px 10px var(--clay-shadow-inner),
+      inset -4px -4px 10px var(--clay-highlight);
+    color: hsl(var(--foreground));
+  }
+
+  .clay-glass {
+    background-color: var(--clay-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
 }
