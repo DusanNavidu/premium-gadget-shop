@@ -5,10 +5,10 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import Link from "next/link";
 import { PackageSearch } from "lucide-react";
 import { GlassCard } from "@/components/shop/glass-card";
-import { products, CATEGORY_TABS, type Product } from "@/data/products";
+import { products, type Product } from "@/data/products";
 
 export function FeaturedProducts() {
-  const [activeTab, setActiveTab] = useState<(typeof CATEGORY_TABS)[number]["id"]>("all");
+  const [activeTab, setActiveTab] = useState("all");
 
   const filtered = useMemo(() => {
     const list = activeTab === "all" ? products : products.filter((p) => p.category === activeTab);
@@ -48,13 +48,13 @@ export function FeaturedProducts() {
       {/* Animated category tabs */}
       <LayoutGroup id="featured-tabs">
         <div className="flex items-center gap-1.5 mb-8 md:mb-10 clay-card w-fit p-1.5 rounded-full overflow-x-auto max-w-full">
-          {CATEGORY_TABS.map((tab) => (
+          {["all", "electronics", "computers", "accessories"].map((tab) => (
             <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              key={tab}
+              onClick={() => setActiveTab(tab)}
               className="relative px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-colors"
             >
-              {activeTab === tab.id && (
+              {activeTab === tab && (
                 <motion.span
                   layoutId="active-tab-pill"
                   className="absolute inset-0 bg-primary rounded-full"
@@ -63,10 +63,10 @@ export function FeaturedProducts() {
               )}
               <span
                 className={`relative z-10 ${
-                  activeTab === tab.id ? "text-primary-foreground" : "text-muted-foreground"
+                  activeTab === tab ? "text-primary-foreground" : "text-muted-foreground"
                 }`}
               >
-                {tab.label}
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </span>
             </button>
           ))}
