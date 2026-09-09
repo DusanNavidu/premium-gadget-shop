@@ -90,7 +90,7 @@ export const products: Product[] = [
     originalPrice: 150,
     category: "mobile",
     subCategory: "Fast Chargers",
-    thumbnail: "/products/catalog/anker-737.png",
+    thumbnail: "/products/catalog/images (28).jpg",
     rating: 4.8,
     reviewCount: 521,
     badge: "Sale",

@@ -42,6 +42,16 @@ export const productMedia: ProductMedia[] = [
     ], // no extra angles — slideshow just stays on the thumbnail
   },
   {
+    productId: "anker-737-powerbank",
+    thumbnail: "/products/catalog/images (28).jpg",
+    gallery: [
+      "/products/catalog/image_b7551ce1-3e31-451f-ab4b-ea3f533f7592.webp",
+      "/products/catalog/images (29).jpg",
+      "/products/catalog/A1289011_TD03_V1.webp",
+      "/products/catalog/A1289011_TD04_V1.webp"
+    ],
+  },
+  {
     productId: "samsung-galaxy-s24-ultra",
     thumbnail: "/products/catalog/samsung-s24-ultra.png",
     gallery: [],

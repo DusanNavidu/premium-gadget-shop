@@ -140,7 +140,7 @@ export function FlashDealCard(props: FlashDealCardProps) {
         )}
 
         {discountPercentage > 0 && (
-          <span className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider z-10 bg-destructive text-white shadow-md">
+          <span className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider z-10 bg-black text-white shadow-md">
             -{discountPercentage}% OFF
           </span>
         )}
