@@ -24,10 +24,12 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "sony-wh-1000xm5",
-    thumbnail: "/products/catalog/sony-wh-1000xm5.png",
+    thumbnail: "/products/catalog/6145c1d32e6ac8e63a46c912dc33c5bb-Photoroom.png",
     gallery: [
-      "/products/catalog/sony-wh-1000xm5-folded.png",
-      "/products/catalog/sony-wh-1000xm5-case.png",
+      "/products/catalog/111295_original_local_1200x1050_v3_converted-Photoroom.png",
+      "/products/catalog/images (23)-Photoroom.png",
+      "/products/catalog/89733112_8.webp",
+      "/products/catalog/images (27).jpg",
     ],
   },
   {

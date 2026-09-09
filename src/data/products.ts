@@ -52,7 +52,7 @@ export const products: Product[] = [
     basePrice: 398,
     category: "audio",
     subCategory: "Noise-Canceling Headphones",
-    thumbnail: "/products/catalog/sony-wh-1000xm5.png",
+    thumbnail: "/products/catalog/6145c1d32e6ac8e63a46c912dc33c5bb-Photoroom.png",
     rating: 4.7,
     reviewCount: 891,
     badge: "Sale",
