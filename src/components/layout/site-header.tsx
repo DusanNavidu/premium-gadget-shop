@@ -10,8 +10,8 @@ import { useRouter } from "next/navigation";
 import { useCartStore } from "@/store/cart-store";
 
 const NAV_LINKS = [
-  { label: "Mobiles", href: "/shop?category=mobiles" },
-  { label: "Laptops", href: "/shop?category=laptops" },
+  { label: "Mobiles", href: "/shop?category=mobile" },
+  { label: "Computers", href: "/shop?category=computers" },
   { label: "Accessories", href: "/shop?category=accessories" },
 ];
 
