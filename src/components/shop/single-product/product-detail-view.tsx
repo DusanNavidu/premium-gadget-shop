@@ -42,6 +42,9 @@ export function ProductDetailView({ product, media, variants, details, shippingM
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
 
+  const addItem = useCartStore((s) => s.addItem);
+  const openCart = useCartStore((s) => s.setIsOpen);
+
   const isColorReq = (variants?.colors?.length ?? 0) > 0;
   const isRamReq = (variants?.ramOptions?.length ?? 0) > 0;
   const isStorageReq = (variants?.storageOptions?.length ?? 0) > 0;
@@ -56,8 +59,6 @@ export function ProductDetailView({ product, media, variants, details, shippingM
   const adjustmentsTotal = (selectedRam?.priceAdjustment ?? 0) + (selectedStorage?.priceAdjustment ?? 0);
   const shippingPrice = selectedShipping?.price ?? 0;
 
-  const addItem = useCartStore((state) => state.addItem);
-
   const finalPrice = useMemo(() => {
     return (product.basePrice + adjustmentsTotal + shippingPrice) * quantity;
   }, [product.basePrice, adjustmentsTotal, shippingPrice, quantity]);
@@ -66,18 +67,12 @@ export function ProductDetailView({ product, media, variants, details, shippingM
     style: "currency", currency: "USD", maximumFractionDigits: 0,
   }).format(finalPrice);
 
-  // const handleAddToCart = () => {
-  //   if (!canAddToCart) return;
-  //   setJustAdded(true);
-  //   setTimeout(() => setJustAdded(false), 1500);
-  // };
-
   const handleAddToCart = () => {
     if (!canAddToCart) return;
-    
+
     addItem({
       product,
-      quantity: 1,
+      quantity,
       finalPrice,
       selectedColor,
       selectedRam,
@@ -86,7 +81,12 @@ export function ProductDetailView({ product, media, variants, details, shippingM
     });
 
     setJustAdded(true);
-    setTimeout(() => setJustAdded(false), 1500);
+    // Let the success state register for a beat, then hand off to the cart drawer —
+    // matches the "add → confirm → review cart" flow shoppers expect.
+    setTimeout(() => {
+      setJustAdded(false);
+      openCart(true);
+    }, 700);
   };
 
   return (
@@ -111,8 +111,8 @@ export function ProductDetailView({ product, media, variants, details, shippingM
           <ProductSpecifications specs={details?.specs} />
         </div>
 
-        {/* Right Column: Details, Selections & Checkout */}
-        <div className="lg:col-span-6 flex flex-col space-y-7 lg:sticky lg:top-28">
+        {/* Right Column: Details, Selections & Checkout — internally scrollable panel */}
+        <div className="lg:col-span-6 lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto flex flex-col space-y-7 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" }}>
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xs uppercase tracking-widest text-primary font-bold">

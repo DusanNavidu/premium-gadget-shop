@@ -74,7 +74,7 @@ export function FlashDealCard(props: FlashDealCardProps) {
     : 0;
 
   const handleCardClick = () => {
-    router.push(`/shop/${id}`);
+    router.push(`/flash-deals/${id}`);   // was: /shop/${id}
   };
 
   const handlePrimaryAction = (e: React.MouseEvent) => {
@@ -83,7 +83,7 @@ export function FlashDealCard(props: FlashDealCardProps) {
     if (!inStock) return;
     
     if (hasVariants) {
-      router.push(`/shop/${id}`);
+      router.push(`/flash-deals/${id}`);   // was: /shop/${id}
     } else {
       if (justAdded) return;
 

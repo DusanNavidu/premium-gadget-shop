@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { heroProducts } from "@/data/hero-products";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const AUTO_ROTATE_MS = 5500;
 
@@ -13,6 +14,7 @@ export function HeroBanner() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const active = heroProducts[activeIndex];
+  const router = useRouter();
 
   const goTo = useCallback((index: number) => {
     setActiveIndex((index + heroProducts.length) % heroProducts.length);
@@ -141,7 +143,7 @@ export function HeroBanner() {
               <Button
                 variant="primary"
                 size="md"
-                onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => router.push("/shop")}
                 className="group whitespace-nowrap flex-1 sm:flex-none md:px-8! md:py-4! md:text-base!"
               >
                 Explore Now

@@ -80,12 +80,12 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "bose-qc-ultra",
-    thumbnail: "/products/catalog/bose-qc-ultra.png",
+    thumbnail: "/products/catalog/images (37).jpg",
     gallery: [],
   },
   {
     productId: "garmin-fenix-7x",
-    thumbnail: "/products/catalog/garmin-fenix.png",
+    thumbnail: "/products/catalog/cf-lg.webp",
     gallery: [],
   }
 ];

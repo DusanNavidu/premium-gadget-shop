@@ -1,62 +1,81 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Timer, Zap } from "lucide-react";
-import { FlashDealCard } from "@/components/shop/flash-deal-card"; 
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight, Zap } from "lucide-react";
 import { products } from "@/data/products";
+import { FlashDealCard } from "@/components/shop/flash-deal-card";
 
 export function FlashDeals() {
-  const [timeLeft, setTimeLeft] = useState({ h: 0, m: 0, s: 0 });
+  const flashDeals = products
+    .filter((p) => p.badge === "Sale" && p.originalPrice)
+    .slice(0, 8);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date();
-      const endOfDay = new Date();
-      endOfDay.setHours(23, 59, 59, 999);
-      const diff = endOfDay.getTime() - now.getTime();
-
-      setTimeLeft({
-        h: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        m: Math.floor((diff / 1000 / 60) % 60),
-        s: Math.floor((diff / 1000) % 60),
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const flashItems = products.filter((p) => p.badge === "Sale" && p.originalPrice);
-
-  if (flashItems.length === 0) return null;
+  if (flashDeals.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-20 px-4 md:px-6 container mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 bg-destructive/10 border border-destructive/20 p-6 rounded-3xl">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <Zap className="w-6 h-6 text-destructive fill-destructive animate-pulse" />
-            <h2 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight">
-              Flash Deals
-            </h2>
+    <section className="py-14 md:py-16 px-4 md:px-6 container mx-auto">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-8 gap-4">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl bg-destructive/10 text-destructive shrink-0">
+            <Zap className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" />
           </div>
-          <p className="text-muted-foreground text-sm">
-            Up to 50% off on selected items. Hurry up!
-          </p>
+          <div>
+            <h2 className="text-xl md:text-3xl font-bold text-foreground tracking-tight">Flash Deals</h2>
+            <p className="text-muted-foreground text-xs md:text-sm mt-0.5">
+              Limited-time prices, while stock lasts.
+            </p>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3 clay-card px-5 py-3 rounded-xl border-destructive/20">
-          <Timer className="w-5 h-5 text-destructive" />
-          <div className="flex items-center gap-2 text-xl font-bold font-mono">
-            <span>{String(timeLeft.h).padStart(2, "0")}</span>:
-            <span>{String(timeLeft.m).padStart(2, "0")}</span>:
-            <span className="text-destructive">{String(timeLeft.s).padStart(2, "0")}</span>
-          </div>
-        </div>
+        <Link
+          href="/flash-deals"
+          className="flex items-center gap-1 text-xs md:text-sm font-semibold text-primary hover:text-primary/80 transition-colors shrink-0 whitespace-nowrap"
+        >
+          See All Deals <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+        </Link>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {flashItems.map((item) => (
-          <FlashDealCard key={item.id} {...item} />
+      {/* Horizontal scroll */}
+      <div
+        className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {flashDeals.map((product, i) => (
+          <motion.div
+            key={product.id}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, delay: i * 0.05 }}
+            className="snap-start shrink-0 w-[65vw] xs:w-[280px] md:w-65 lg:w-67.5"
+          >
+            <FlashDealCard {...product} />
+          </motion.div>
         ))}
+
+        {/* View All card at the end of the scroll */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: flashDeals.length * 0.05 }}
+          className="snap-start shrink-0 w-[65vw] xs:w-[280px] md:w-65 lg:w-67.5"
+        >
+          <Link
+            href="/flash-deals"
+            className="group flex flex-col items-center justify-center gap-3 h-full min-h-80 md:min-h-90 rounded-2xl clay-card border border-dashed border-primary/30 hover:border-primary/60 transition-colors"
+          >
+            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+              <ArrowRight className="w-6 h-6" />
+            </div>
+            <div className="text-center px-4">
+              <p className="font-bold text-foreground text-sm md:text-base">View All Deals</p>
+              <p className="text-xs text-muted-foreground mt-1">Browse the full collection</p>
+            </div>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
