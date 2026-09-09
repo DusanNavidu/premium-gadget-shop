@@ -18,8 +18,8 @@ export const productMedia: ProductMedia[] = [
     productId: "macbook-pro-16-m3-max",
     thumbnail: "/products/catalog/macbook-pro-16.png",
     gallery: [
-      "/products/catalog/macbook-pro-16-open.png",
-      "/products/catalog/macbook-pro-16-ports.png",
+      "/products/catalog/img-MacBook-Pro-Retina-16-Inch-24323-scaled-1250x1250-Photoroom.png",
+      "/products/catalog/img-MacBook-Pro-Retina-16-Inch-52345-scaled-1250x1250-Photoroom.png",
     ],
   },
   {
@@ -35,4 +35,34 @@ export const productMedia: ProductMedia[] = [
     thumbnail: "/products/catalog/magsafe-charger.png",
     gallery: [], // no extra angles — slideshow just stays on the thumbnail
   },
+  {
+    productId: "samsung-galaxy-s24-ultra",
+    thumbnail: "/products/catalog/samsung-s24-ultra.png",
+    gallery: [],
+  },
+  {
+    productId: "oneplus-12",
+    thumbnail: "/products/catalog/oneplus-12.png",
+    gallery: [],
+  },
+  {
+    productId: "asus-rog-zephyrus-g14",
+    thumbnail: "/products/catalog/asus-g14.png",
+    gallery: [],
+  },
+  {
+    productId: "lg-ultragear-27",
+    thumbnail: "/products/catalog/lg-ultragear.png",
+    gallery: [],
+  },
+  {
+    productId: "bose-qc-ultra",
+    thumbnail: "/products/catalog/bose-qc-ultra.png",
+    gallery: [],
+  },
+  {
+    productId: "garmin-fenix-7x",
+    thumbnail: "/products/catalog/garmin-fenix.png",
+    gallery: [],
+  }
 ];

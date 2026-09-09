@@ -62,4 +62,55 @@ export const productVariants: ProductVariant[] = [
     ],
   },
   // "magsafe-charger-pro" has no entry → renders "Add to Cart", not "Select Options".
+  {
+    productId: "samsung-galaxy-s24-ultra",
+    colors: [
+      { name: "Titanium Gray", hex: "#7a7a7a" },
+      { name: "Titanium Violet", hex: "#5a4d6b" },
+      { name: "Titanium Yellow", hex: "#d8c47b" },
+    ],
+    storageOptions: [
+      { label: "256GB", priceAdjustment: 0 },
+      { label: "512GB", priceAdjustment: 120 },
+      { label: "1TB", priceAdjustment: 350 },
+    ],
+  },
+  {
+    productId: "ipad-pro-m4",
+    colors: [
+      { name: "Space Black", hex: "#1d1d1f" },
+      { name: "Silver", hex: "#e3e4e5" },
+    ],
+    storageOptions: [
+      { label: "256GB", priceAdjustment: 0 },
+      { label: "512GB", priceAdjustment: 200 },
+      { label: "1TB", priceAdjustment: 600 }, // 1TB includes extra RAM on iPad Pros
+    ],
+  },
+  {
+    productId: "asus-rog-zephyrus-g14",
+    colors: [
+      { name: "Eclipse Gray", hex: "#2b2b2b" },
+      { name: "Moonlight White", hex: "#f0f0f0" },
+    ],
+    ramOptions: [
+      { label: "16GB", priceAdjustment: 0 },
+      { label: "32GB", priceAdjustment: 150 },
+    ]
+  },
+  {
+    productId: "bose-qc-ultra",
+    colors: [
+      { name: "Black", hex: "#000000" },
+      { name: "White Smoke", hex: "#e0e0e0" },
+      { name: "Sandstone", hex: "#d4c8bd" }
+    ],
+  },
+  {
+    productId: "apple-watch-ultra-2",
+    colors: [
+      { name: "Titanium with Alpine Loop", hex: "#e56c3a" },
+      { name: "Titanium with Ocean Band", hex: "#2a3b5c" },
+    ]
+  }
 ];
