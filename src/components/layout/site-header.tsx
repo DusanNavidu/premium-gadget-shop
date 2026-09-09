@@ -73,7 +73,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Premium Search Bar */}
-        <form onSubmit={handleSearch} className="flex-1 max-w-xl relative group hidden md:block">
+        <form onSubmit={handleSearch} className="flex-1 max-w-xl relative group hidden lg:block">
           <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
             <Search className="w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
           </div>
