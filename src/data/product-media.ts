@@ -53,8 +53,15 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "samsung-galaxy-s24-ultra",
-    thumbnail: "/products/catalog/samsung-s24-ultra.png",
-    gallery: [],
+    thumbnail: "/products/catalog/3-2.jpg",
+    gallery: [
+      "/products/catalog/Samsung_Galaxy_S24_Ultra_5G_Titanium_Blue_ONEi_1.webp",
+      "/products/catalog/images (32).jpg",
+      "/products/catalog/images (31).jpg",
+      "/products/catalog/images (30).jpg",
+      "/products/catalog/31YlS9zbaKL.jpg",
+      "/products/catalog/b76f9a22-ecce-4242-9e0b-ba9e622e0822.0aeb855fbecaa384d3d8f7fc2da5eb4d.avif"
+    ],
   },
   {
     productId: "oneplus-12",

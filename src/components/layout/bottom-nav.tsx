@@ -61,7 +61,7 @@ export function BottomNav() {
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-2 -right-3 bg-destructive text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full shadow-md"
+                    className="absolute -top-2 -right-3 bg-black text-white dark:bg-amber-50 dark:text-black text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full shadow-md"
                   >
                     {cartCount}
                   </motion.span>

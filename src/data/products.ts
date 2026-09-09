@@ -102,7 +102,7 @@ export const products: Product[] = [
     basePrice: 1299,
     category: "mobile",
     subCategory: "Flagship Smartphones",
-    thumbnail: "/products/catalog/samsung-s24-ultra.png",
+    thumbnail: "/products/catalog/3-2.jpg",
     rating: 4.9,
     reviewCount: 843,
     badge: "Trending",

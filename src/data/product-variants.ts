@@ -68,6 +68,8 @@ export const productVariants: ProductVariant[] = [
       { name: "Titanium Gray", hex: "#7a7a7a" },
       { name: "Titanium Violet", hex: "#5a4d6b" },
       { name: "Titanium Yellow", hex: "#d8c47b" },
+      { name: "Titanium Blue", hex: "#3f4a5a" },
+      { name: "Titanium Green", hex: "#4a5a4a" },
     ],
     storageOptions: [
       { label: "256GB", priceAdjustment: 0 },
