@@ -70,12 +70,12 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "asus-rog-zephyrus-g14",
-    thumbnail: "/products/catalog/asus-g14.png",
+    thumbnail: "/products/catalog/images (34).jpg",
     gallery: [],
   },
   {
     productId: "lg-ultragear-27",
-    thumbnail: "/products/catalog/lg-ultragear.png",
+    thumbnail: "/products/catalog/Monitor-27GR95QE-B-OLED-Gallery_3000x3000.avif",
     gallery: [],
   },
   {

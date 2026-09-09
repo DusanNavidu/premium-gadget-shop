@@ -178,7 +178,7 @@ export const products: Product[] = [
     basePrice: 1899,
     category: "computers",
     subCategory: "Ultrabooks",
-    thumbnail: "/products/catalog/dell-xps-15.png",
+    thumbnail: "/products/catalog/images (33).jpg",
     rating: 4.6,
     reviewCount: 320,
     inStock: true,
@@ -190,7 +190,7 @@ export const products: Product[] = [
     originalPrice: 1699,
     category: "computers",
     subCategory: "Gaming Laptops",
-    thumbnail: "/products/catalog/asus-g14.png",
+    thumbnail: "/products/catalog/images (34).jpg",
     rating: 4.8,
     reviewCount: 512,
     badge: "Sale", // Flash Deal
@@ -202,7 +202,7 @@ export const products: Product[] = [
     basePrice: 1549,
     category: "computers",
     subCategory: "Business Laptops",
-    thumbnail: "/products/catalog/thinkpad-x1.png",
+    thumbnail: "/products/catalog/thinkpadx1-gen-14-inch-intel-pdp-gallery-1.avif",
     rating: 4.9,
     reviewCount: 289,
     badge: "Best Seller",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     originalPrice: 999,
     category: "computers",
     subCategory: "Gaming Monitors",
-    thumbnail: "/products/catalog/lg-ultragear.png",
+    thumbnail: "/products/catalog/Monitor-27GR95QE-B-OLED-Gallery_3000x3000.avif",
     rating: 4.7,
     reviewCount: 432,
     badge: "Sale", // Flash Deal
@@ -228,7 +228,7 @@ export const products: Product[] = [
     originalPrice: 199,
     category: "computers",
     subCategory: "Mechanical Keyboards",
-    thumbnail: "/products/catalog/keychron-q1.png",
+    thumbnail: "/products/catalog/images (35).jpg",
     rating: 4.8,
     reviewCount: 876,
     badge: "Sale", // Flash Deal
@@ -241,7 +241,7 @@ export const products: Product[] = [
     originalPrice: 249,
     category: "computers",
     subCategory: "Storage",
-    thumbnail: "/products/catalog/samsung-t9.png",
+    thumbnail: "/products/catalog/us-portable-ssd-t9-mu-pg1t0b-am-000_10159120022034.webp",
     rating: 4.9,
     reviewCount: 1540,
     badge: "Sale", // Flash Deal
