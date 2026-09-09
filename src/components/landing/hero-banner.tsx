@@ -37,7 +37,7 @@ export function HeroBanner() {
       <div
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="relative container mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem]
+        className="relative container mx-auto max-w-7xl overflow-hidden rounded-3xl sm:rounded-4xl md:rounded-[2.5rem]
                    shadow-[0_20px_60px_-20px_rgba(0,0,0,0.35)] md:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)]"
         style={{
           backgroundColor: "hsl(var(--hero-surface))",
@@ -66,7 +66,7 @@ export function HeroBanner() {
         <div className="absolute top-10 right-[15%] w-16 h-16 sm:w-24 sm:h-24 md:w-40 md:h-40 rounded-full bg-primary/70 blur-sm pointer-events-none" />
         <div className="absolute bottom-10 right-[5%] w-20 h-20 sm:w-32 sm:h-32 md:w-56 md:h-56 rounded-full bg-primary/60 pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col md:grid md:grid-cols-2 md:gap-4 md:items-center px-5 sm:px-8 md:px-14 py-8 sm:py-10 md:py-0 md:h-[600px] lg:h-[620px]">
+        <div className="relative z-10 flex flex-col md:grid md:grid-cols-2 md:gap-4 md:items-center px-5 sm:px-8 md:px-14 py-8 sm:py-10 md:py-0 md:h-150 lg:h-155">
           {/* Product image + floating price card */}
           <div className="relative flex items-center justify-center order-1 md:order-2 md:h-full mb-2 sm:mb-4 md:mb-0">
             <AnimatePresence mode="wait">
@@ -123,13 +123,13 @@ export function HeroBanner() {
                 transition={{ duration: 0.4 }}
                 className="flex flex-col items-center md:items-start w-full"
               >
-                <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:min-h-[120px] lg:min-h-[144px] line-clamp-2">
+                <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:min-h-30 lg:min-h-36 line-clamp-2">
                   <span>{active.titlePrefix}</span>{" "}
                   <span className="text-primary">{active.titleHighlight}</span>
                 </h1>
 
                 <p
-                  className="mt-3 sm:mt-4 md:mt-6 text-[13px] sm:text-sm md:text-[15px] lg:text-lg max-w-xs sm:max-w-sm md:max-w-lg font-light md:min-h-[56px] line-clamp-3"
+                  className="mt-3 sm:mt-4 md:mt-6 text-[13px] sm:text-sm md:text-[15px] lg:text-lg max-w-xs sm:max-w-sm md:max-w-lg font-light md:min-h-14 line-clamp-3"
                   style={{ color: "hsl(var(--hero-surface-muted))" }}
                 >
                   {active.description}
@@ -142,7 +142,7 @@ export function HeroBanner() {
                 variant="primary"
                 size="md"
                 onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-                className="group whitespace-nowrap flex-1 sm:flex-none md:!px-8 md:!py-4 md:!text-base"
+                className="group whitespace-nowrap flex-1 sm:flex-none md:px-8! md:py-4! md:text-base!"
               >
                 Explore Now
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform shrink-0" />

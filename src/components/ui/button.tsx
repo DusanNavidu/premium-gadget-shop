@@ -55,7 +55,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {/* Shine sweep — only on primary, gives it a premium glossy feel */}
         {variant === "primary" && (
-          <span className="absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+          <span className="absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-700 ease-out bg-linear-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
         )}
 
         {isLoading ? (

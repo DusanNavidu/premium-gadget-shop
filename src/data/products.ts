@@ -4,6 +4,7 @@ export interface Product {
   id: string;
   title: string;
   basePrice: number;
+  originalPrice?: number;
   category: ProductCategory;
   subCategory: string;
   thumbnail: string;
@@ -12,6 +13,13 @@ export interface Product {
   badge?: "New" | "Sale" | "Best Seller" | "Trending" | "Limited";
   inStock?: boolean;
 }
+
+export const CATEGORY_TABS: { id: "all" | ProductCategory; label: string }[] = [
+  { id: "all", label: "All Products" },
+  { id: "mobile", label: "Mobile Devices" },
+  { id: "computers", label: "Computers & Laptops" },
+  { id: "audio", label: "Audio & Wearables" },
+];
 
 export const products: Product[] = [
   {
@@ -59,6 +67,33 @@ export const products: Product[] = [
     thumbnail: "/products/catalog/magsafe-charger.png",
     rating: 4.5,
     reviewCount: 89,
+    inStock: true,
+  },
+
+  {
+    id: "logitech-mx-master-3s",
+    title: "Logitech MX Master 3S",
+    basePrice: 49, // 50% Off (Original $99)
+    originalPrice: 99,
+    category: "computers",
+    subCategory: "Wireless Mice",
+    thumbnail: "/products/catalog/mx-master-3s.png",
+    rating: 4.9,
+    reviewCount: 1042,
+    badge: "Sale",
+    inStock: true,
+  },
+  {
+    id: "anker-737-powerbank",
+    title: "Anker 737 Power Bank",
+    basePrice: 75, // 50% Off
+    originalPrice: 150,
+    category: "mobile",
+    subCategory: "Fast Chargers",
+    thumbnail: "/products/catalog/anker-737.png",
+    rating: 4.8,
+    reviewCount: 521,
+    badge: "Sale",
     inStock: true,
   },
 ];

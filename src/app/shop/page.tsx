@@ -1,19 +1,21 @@
-// import { ShopHeader } from "@/components/shop/shop-header";
-// import { ProductFilter } from "@/components/shop/product-filter";
-// import { ProductGrid } from "@/components/shop/product-grid";
-// import { SiteFooter } from "@/components/layout/site-footer";
+import { Suspense } from "react";
+import { ShopExplorer } from "@/components/shop/shop-explorer";
 
-// export default function ShopPage() {
-//   return (
-//     <div className="min-h-screen pt-24 bg-black text-white">
-//       <div className="container mx-auto px-6 py-8">
-//         <ShopHeader />
-//         <div className="flex flex-col md:flex-row gap-8 mt-8">
-//           <ProductFilter />
-//           <ProductGrid />
-//         </div>
-//       </div>
-//       <SiteFooter />
-//     </div>
-//   );
-// }
+export default function ShopPage() {
+  return (
+    <div className="min-h-screen pt-24 pb-20 px-4 md:px-6 container mx-auto max-w-7xl">
+      <div className="mb-10 text-center md:text-left">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight mb-4">
+          The Tech Vault
+        </h1>
+        <p className="text-muted-foreground text-sm md:text-base max-w-2xl leading-relaxed">
+          Discover our full collection of premium devices, precision accessories, and high-performance hardware engineered for your workflow.
+        </p>
+      </div>
+
+      <Suspense fallback={<div className="h-64 flex items-center justify-center text-muted-foreground font-medium animate-pulse">Loading Catalog...</div>}>
+        <ShopExplorer />
+      </Suspense>
+    </div>
+  );
+}

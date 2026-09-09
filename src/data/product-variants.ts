@@ -27,7 +27,7 @@ export const productVariants: ProductVariant[] = [
   {
     productId: "iphone-17-pro-max",
     colors: [
-      { name: "Titanium Black", hex: "#3b3b3d" },
+      { name: "Titanium orange", hex: "#f4a261" },
       { name: "Titanium White", hex: "#f2f1ec" },
       { name: "Titanium Blue", hex: "#3f4a5a" },
     ],

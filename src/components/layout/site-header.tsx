@@ -6,17 +6,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, ShoppingBag, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Logo } from "../ui/logo";
+import { useRouter } from "next/navigation";
+import { useCartStore } from "@/store/cart-store";
 
 const NAV_LINKS = [
-  { label: "Shop", href: "/shop" },
   { label: "Mobiles", href: "/shop?category=mobiles" },
   { label: "Laptops", href: "/shop?category=laptops" },
   { label: "Accessories", href: "/shop?category=accessories" },
 ];
 
 export function SiteHeader() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const { items, setIsOpen } = useCartStore();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -24,6 +30,16 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => setMounted(true), []);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/shop?q=${encodeURIComponent(searchQuery.trim())}`);
+      setMobileOpen(false);
+    }
+  };
 
   return (
     <motion.header
@@ -51,18 +67,20 @@ export function SiteHeader() {
               className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
             >
               {link.label}
-              <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
             </Link>
           ))}
         </nav>
 
         {/* Premium Search Bar */}
-        <div className="flex-1 max-w-xl relative group hidden md:block">
+        <form onSubmit={handleSearch} className="flex-1 max-w-xl relative group hidden md:block">
           <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
             <Search className="w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
           </div>
           <input
             type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search gadgets, mobiles, laptops..."
             className="w-full h-11 pl-10 pr-16 rounded-full bg-foreground/[0.04] dark:bg-foreground/[0.06] border border-clay-border text-sm placeholder:text-muted-foreground/50 outline-none transition-all focus:bg-background focus:border-primary/40 focus:ring-4 focus:ring-primary/10"
           />
@@ -71,7 +89,7 @@ export function SiteHeader() {
               ⌘K
             </span>
           </div>
-        </div>
+        </form>
 
         {/* Actions */}
         <div className="flex items-center gap-1 md:gap-2 shrink-0">
@@ -82,11 +100,16 @@ export function SiteHeader() {
             </span>
           </button>
 
-          <button className="relative p-2.5 rounded-full hover:bg-foreground/5 transition-colors flex items-center justify-center">
+          <button 
+            onClick={() => setIsOpen(true)}
+            className="relative p-2.5 rounded-full hover:bg-foreground/5 transition-colors flex items-center justify-center"
+          >
             <ShoppingBag className="w-5 h-5 text-foreground/80" />
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[9px] font-bold flex items-center justify-center">
-              3
-            </span>
+            {mounted && items.length > 0 && (
+              <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[9px] font-bold flex items-center justify-center">
+                {items.length}
+              </span>
+            )}
           </button>
 
           <ThemeToggle />

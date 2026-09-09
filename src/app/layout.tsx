@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BottomNav } from "@/components/layout/bottom-nav";
+import { CartDrawer } from "@/components/cart/cart-drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-foreground antialiased transition-colors duration-300 pb-24 md:pb-28`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
+          <CartDrawer />
           {children}
           <BottomNav />
         </ThemeProvider>
