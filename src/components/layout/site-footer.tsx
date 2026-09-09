@@ -105,7 +105,7 @@ export function SiteFooter() {
           {/* Brand column */}
           <div className="sm:col-span-2 md:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/30">
+              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-linear-to-br from-primary to-accent shadow-lg shadow-primary/30">
                 <Cpu className="w-5 h-5 text-primary-foreground" strokeWidth={2.2} />
               </div>
               <span className="font-extrabold tracking-tight text-lg" style={{ color: "hsl(var(--hero-surface-foreground))" }}>
