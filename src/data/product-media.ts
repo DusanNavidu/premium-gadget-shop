@@ -65,7 +65,7 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "oneplus-12",
-    thumbnail: "/products/catalog/oneplus-12.png",
+    thumbnail: "/products/catalog/OnePlus-12-5G-Flowy-Emerald.jpg",
     gallery: [],
   },
   {

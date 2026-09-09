@@ -114,7 +114,7 @@ export const products: Product[] = [
     basePrice: 999,
     category: "mobile",
     subCategory: "Flagship Smartphones",
-    thumbnail: "/products/catalog/pixel-8-pro.png",
+    thumbnail: "/products/catalog/pixel-8-pro.webp",
     rating: 4.6,
     reviewCount: 412,
     inStock: true,
@@ -126,7 +126,7 @@ export const products: Product[] = [
     originalPrice: 899,
     category: "mobile",
     subCategory: "Flagship Smartphones",
-    thumbnail: "/products/catalog/oneplus-12.png",
+    thumbnail: "/products/catalog/OnePlus-12-5G-Flowy-Emerald.jpg",
     rating: 4.7,
     reviewCount: 310,
     badge: "Sale", // Flash Deal
@@ -151,7 +151,7 @@ export const products: Product[] = [
     originalPrice: 499,
     category: "mobile",
     subCategory: "Tablets",
-    thumbnail: "/products/catalog/ipad-mini.png",
+    thumbnail: "/products/catalog/IPADM6pink_414f0c9b-5217-42b8-89ce-e2b930eae3ec_1024x.webp",
     rating: 4.8,
     reviewCount: 1102,
     badge: "Sale", // Flash Deal
@@ -164,7 +164,7 @@ export const products: Product[] = [
     originalPrice: 149,
     category: "mobile",
     subCategory: "Charging Stations",
-    thumbnail: "/products/catalog/belkin-3in1.png",
+    thumbnail: "/products/catalog/61D9QUSf2CL.jpg",
     rating: 4.7,
     reviewCount: 654,
     badge: "Sale", // Flash Deal
