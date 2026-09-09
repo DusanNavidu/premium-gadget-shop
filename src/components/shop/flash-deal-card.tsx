@@ -201,7 +201,7 @@ export function FlashDealCard(props: FlashDealCardProps) {
           <button
             onClick={handlePrimaryAction}
             disabled={!inStock}
-            className="w-full py-2.5 rounded-xl bg-destructive/10 text-destructive hover:bg-destructive hover:text-white border border-destructive/20 text-xs md:text-sm font-bold flex items-center justify-center disabled:opacity-40 disabled:pointer-events-none transition-all overflow-hidden"
+            className="w-full py-2.5 rounded-xl clay-btn-primary text-xs md:text-sm font-bold flex items-center justify-center disabled:opacity-40 disabled:pointer-events-none hover:brightness-110 transition-all overflow-hidden"
           >
             <AnimatePresence mode="wait" initial={false}>
               {justAdded && !hasVariants ? (
@@ -213,7 +213,7 @@ export function FlashDealCard(props: FlashDealCardProps) {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                   className="flex items-center gap-1.5"
                 >
-                  <Check className="w-4 h-4" /> Added to Cart
+                  <Check className="w-4 h-4 text-green-300" /> Added to Cart
                 </motion.span>
               ) : (
                 <motion.span
