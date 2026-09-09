@@ -34,8 +34,12 @@ export const productMedia: ProductMedia[] = [
   },
   {
     productId: "magsafe-charger-pro",
-    thumbnail: "/products/catalog/magsafe-charger.png",
-    gallery: [], // no extra angles — slideshow just stays on the thumbnail
+    thumbnail: "/products/catalog/fee232ef1ebbb43eed3b194dae099489.jpg_720x720q80.jpg",
+    gallery: [
+      "/products/catalog/61GQIWnARSL._AC_UF894,1000_QL80_.jpg",
+      "/products/catalog/870846cbe1e6379d1ce4194d923e9846.jpg_720x720q80.jpg",
+      "/products/catalog/4-1.png"
+    ], // no extra angles — slideshow just stays on the thumbnail
   },
   {
     productId: "samsung-galaxy-s24-ultra",
